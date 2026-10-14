@@ -1,54 +1,71 @@
-# Steve in the Zone — 0.4.0-beta.1
+# Steve in the Zone
 
-Minecraft building, crafting and combat inside S.T.A.L.K.E.R.: Shadow of Chernobyl. Minecraft runs in the background; play in the S.T.A.L.K.E.R. window.
+Build, craft and fight as Steve inside **S.T.A.L.K.E.R.: Shadow of Chernobyl**. NPCs, dialogue and quests come from SoC; tools, armor, crafting and blocks come from Minecraft.
 
-**First playable beta.** It combines Minecraft equipment and building with the original SoC single-player campaign. A complete connected Survival playthrough and the O-Consciousness refusal branch remain unverified. See KNOWN-LIMITATIONS.md and REPORT-A-PROBLEM.md for limitations and bug reports.
+Version **0.4.0-beta.1**. A full story playthrough has not been confirmed. [Known limitations](KNOWN-LIMITATIONS.md).
+
+## Requirements
+
+| Component | Requirement |
+|---|---|
+| Windows | Windows 10 or 11, 64-bit |
+| S.T.A.L.K.E.R. | **Shadow of Chernobyl 1.0006**, without other mods |
+| Minecraft | Installed **Java Edition**. The project uses **1.20.1**; setup prepares that version and Fabric automatically. Bedrock Edition is unsupported |
+| Java | 64-bit Java. **Java 21** is recommended for a new setup; an existing compatible Java 17+ found by setup can also be used |
+| Internet and disk space | Internet access for component downloads and room for a separate copy of the game files |
+
+The base games are not included. Setup creates a separate project installation and preserves your original games and saves.
+
+### Why Java is needed
+
+Minecraft Java Edition runs on Java. This project needs it for the Minecraft part even though you play in the S.T.A.L.K.E.R. window.
+
+If setup finds compatible Java, there is no need to download it again. Otherwise, open the [Microsoft OpenJDK page](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), choose **OpenJDK 21 → Windows → x64 → msi**, and install it. Select **`javaw.exe`** from its **`bin`** folder in the setup Java field. Microsoft OpenJDK is usually installed under `C:\Program Files\Microsoft` in a folder beginning with `jdk-21`.
 
 ## Installation
 
-Requirements: Windows 10/11 x64, your own Shadow of Chernobyl 1.0006 installation, installed Minecraft, and Java 17+ x64. The archive does not contain either game, Java, accounts or somebody else's saves. Internet access is needed to prepare missing Minecraft components.
+1. Download **`Steve-in-the-Zone-0.4.0-beta.1-Windows-x64.zip`** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources` archive is for developers.
+2. Extract the **entire archive** and run **`InstallSteveInTheZone.exe`**. Keep the EXE, `_internal` and `payload` together.
+3. Choose the setup language and fill in the fields using the table below.
+4. Click **Install** and wait for it to finish. Setup prepares Minecraft 1.20.1 and Fabric automatically; no manual Minecraft mod installation is needed.
+5. Open **`app\SteveInTheZone.exe`** inside the new **`Steve in the Zone`** folder, select **Survival**, then **Launch game**.
 
-1. Extract the entire ZIP into a normal folder. Keep the EXE, `_internal` and `payload` together; do not run it inside the ZIP.
-2. Run `InstallSteveInTheZone.exe` and choose English or Russian.
-3. Select the SoC folder containing `gamedata.db*`, the Minecraft folder containing `assets`, `libraries`, `versions`, and a new installation folder. If Java is not found, select `javaw.exe` from an x64 Java 17+ installation.
-4. Wait for setup to finish. Open `app/SteveInTheZone.exe` in the created folder, select Survival, then Launch game.
+| Setup field | What to select |
+|---|---|
+| SoC 1.0006 folder | The installed Shadow of Chernobyl root folder containing `gamedata.db…` files |
+| Installed Minecraft folder | The Java Edition data folder, usually **`%APPDATA%\.minecraft`**. Press Win + R and enter this path to open it. Other launchers may use a different folder |
+| Java | If discovery fails, select the compatible Java **`bin\javaw.exe`** described above |
+| New game folder | A folder where setup will create a separate **`Steve in the Zone`** directory, for example `D:\Games` |
 
-The original installations and saves are preserved. Components are copied to a separate installation. The first game launch creates a fresh Minecraft world and native campaign. A joint first Survival launch and resume after folder relocation passed in a separate installation on this computer. Later launches restore the latest complete paired checkpoint.
-
-Application language is independent of the games. Minecraft keeps the language selected in the source installation; Zone dialogue uses the SoC language. Accounts are not imported. This currently uses a local single-player profile with the selected name; Microsoft sign-in and multiplayer are not implemented.
+Play in the S.T.A.L.K.E.R. window. Minecraft runs in the background. The first launch starts a new campaign; later launches resume the latest joint save.
 
 ## Controls
 
 | Key | Action |
 |---|---|
 | WASD / Space | Move / jump |
-| Left / right mouse | Minecraft attack and mining / use and place block |
-| Wheel / 1–9 | Hotbar selection |
-| E | Minecraft inventory; Zone items and Zone tasks buttons open the original SoC menus |
-| G | Talk, operate story switches, doors and other native interactions |
-| F5 | Third-person camera |
-| F6 | Creative / Survival |
-| F7 / F8 | Paired quicksave / quickload |
-| F9 | Pass through obstacles; press again to restore the previous mode on clear ground |
-| Shift + F9 | In rescue mode, return to its starting point |
-| Esc | Close current screen; SoC menu, graphics and sound |
+| Left / right mouse | Attack and mine / use an item and place a block |
+| Wheel / 1–9 | Select a hotbar item |
+| E | Inventory; Zone items and Zone tasks open SoC items, PDA and quests |
+| G | Talk, pick up and interact with doors or mechanisms |
+| F5 | Third-person view |
+| F6 | Survival / Creative |
+| F7 / F8 | Save / load both parts of the game |
+| Esc | Close the screen or open the menu |
+| F9 / Shift + F9 | Experimental obstacle escape / return to its starting point |
 
-Do not close the hidden Minecraft process separately. Close the SoC window and wait for the pair to save. Settings → New world backs up both parts to `backups` and starts a new campaign. Close both games before moving the entire installation folder.
+To exit, close the S.T.A.L.K.E.R. window and wait for saving. Do not terminate background Minecraft separately: progress is saved jointly by both games. Close both games before moving the entire **`Steve in the Zone`** folder.
 
-## Story interactions
+## Getting started
 
-Some characters refuse to talk to an armed player. Before pressing G, select an empty hotbar slot and remove weapons from your offhand: swords, axes, bows, crossbows and tridents count as weapons. If the NPC is still taking part in an original scene or fight, wait for it to finish.
+Talk to Sidorovich and follow the original quests. If a character refuses to talk, select an empty hotbar slot and remove offhand weapons. Swords, axes and bows count as weapons.
 
-Flash drives, documents, keys, the decoder and psi helmets remain in the real SoC inventory: E → Zone items. They do not become Minecraft items. Psi helmet protection uses the original story condition of having the helmet in this inventory; no Minecraft armor slot is needed. Open E → Zone tasks for the original PDA, tasks and map markers.
+Flash drives, documents, keys and psi helmets are in **E → Zone items**. Psi helmet protection follows the original story conditions while it is in that inventory. Use **E → Zone tasks** for the map and quests.
 
-Save the pair with F7 before entering a laboratory or another area. After an original level transition or scripted relocation, wait for the joint loading process to finish. If a passage appears blocked, check the PDA task first: F9 helps escape an obstacle but does not complete story conditions.
+Buy Minecraft equipment and materials with rubles from Sidorovich and other original traders: open normal trade and select **Minecraft**. Stock up on food, arrows and materials before laboratories. SoC trees cannot be mined as Minecraft trees.
 
-## Equipment and supplies
+Save with **F7** before travelling to another area. If you are stuck, check the PDA task first; F9 does not complete story conditions.
 
-Survival starts with stone tools, planks, dirt, bread, torches and a crafting table. Minecraft supplies use the original rubles and merchants: Sidorovich, Barkeep, Sakharov, Petrenko and the Freedom trader, when their normal trade window is available. Select Minecraft in the native trade window. Food, a bow, arrows and materials are available early; Sidorovich's iron unlocks after the first mission, and later traders' diamonds unlock after the X18 documents. Zone trees cannot be harvested.
+## Problems and security
 
-Stock up on food, arrows, blocks and spare tools before leaving a base. No new trader was added inside the late laboratories or the power plant. Iron armor, a shield and a bow are useful for later areas; diamond armor is an expensive optional upgrade, not a free Survival starting set.
-
-Minecraft armor provides physical and radiation protection. Native medicine, documents and the story psi helmet remain in Zone items. Native guns and outfit protection have not been fully ported; they do not replace Minecraft combat equipment.
-
-For an error report, keep `minecraft/demo-minecraft.log`, `minecraft/demo-minecraft-error.log` and the latest log in `soc/_appdata_steve/logs`. Do not share account files or launch arguments containing tokens.
+[Report an issue](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose) · [Useful logs](REPORT-A-PROBLEM.md) · [What setup does](SECURITY.md)
