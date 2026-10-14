@@ -2,7 +2,7 @@
 
 Build, craft and fight as Steve inside **S.T.A.L.K.E.R.: Shadow of Chernobyl**. NPCs, dialogue and quests come from SoC; tools, armor, crafting and blocks come from Minecraft.
 
-Version **0.4.0-beta.1**. A full story playthrough has not been confirmed. [Known limitations](KNOWN-LIMITATIONS.md).
+Version **0.4.0-beta.2**. A full story playthrough has not been confirmed. [Known limitations](KNOWN-LIMITATIONS.md).
 
 ## Requirements
 
@@ -24,11 +24,11 @@ If setup finds compatible Java, there is no need to download it again. Otherwise
 
 ## Installation
 
-1. Download **`Steve-in-the-Zone-0.4.0-beta.1-Windows-x64.zip`** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources` archive is for developers.
+1. Download **`Steve-in-the-Zone-0.4.0-beta.2-Windows-x64.zip`** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources` archive is for developers.
 2. Extract the **entire archive** and run **`InstallSteveInTheZone.exe`**. Keep the EXE, `_internal` and `payload` together.
 3. Choose the setup language and fill in the fields using the table below.
-4. Click **Install** and wait for it to finish. Setup downloads missing Minecraft 1.20.1/Fabric files from official servers and reuses matching files from your selected Minecraft folder. No manual Fabric or Minecraft mod installation is needed.
-5. Open **`app\SteveInTheZone.exe`** inside the new **`Steve in the Zone`** folder, select **Survival**, then **Launch game**.
+4. Click **Install** and wait for it to finish. Setup creates its own **Minecraft 1.20.1 + Fabric** installation inside the new **Steve in the Zone** folder. It copies matching files from your selected Minecraft folder and downloads the rest from official servers. Our launcher runs this separate copy in the background; you do not need to install 1.20.1 or Fabric through your regular Minecraft launcher.
+5. If **Create a desktop shortcut** was checked, use that shortcut. Otherwise, open **`app\SteveInTheZone.exe`** inside the new **`Steve in the Zone`** folder. Select **Survival**, then **Launch game**.
 
 | Setup field | What to select |
 |---|---|

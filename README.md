@@ -1,61 +1,72 @@
+<div align="center">
+
 # Steve in the Zone
 
-Build, craft and fight as Steve inside **S.T.A.L.K.E.R.: Shadow of Chernobyl**. The Zone keeps its original NPCs, dialogue, quests and economy. Minecraft provides Steve, tools, armor and blocks.
+**Minecraft building and survival in the world of S.T.A.L.K.E.R.**
 
-**[Download beta 0.4.0-beta.1](https://github.com/DeSoreGD/Steve-in-the-zone/releases)** · [Installation and controls](README-EN.md) · [Русский](#русский)
+Windows x64 · Single-player · Survival & Creative
 
-To play, download **`Steve-in-the-Zone-0.4.0-beta.1-Windows-x64.zip`**.
+[**Downloads**](https://github.com/DeSoreGD/Steve-in-the-zone/releases) · [Installation guide](README-EN.md) · [Русский](README-RU.md) · [Report a bug](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose)
 
-## Requirements
-
-- **Windows 10/11, 64-bit.**
-- An installed copy of **Shadow of Chernobyl 1.0006**, without other mods.
-- **Minecraft Java Edition**. Setup downloads missing **1.20.1** and Fabric files from official servers and reuses matching files from your Minecraft folder. Bedrock Edition is not supported.
-- **64-bit Java** to run the Minecraft part. If setup cannot find compatible Java, install [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), **Windows x64 / msi**.
-- Internet access for component downloads and space for a separate game installation.
-
-## Installation
-
-1. Extract the entire Windows ZIP and run **`InstallSteveInTheZone.exe`**.
-2. Select your SoC folder, Minecraft Java Edition data folder (usually `%APPDATA%\.minecraft`), Java if needed, and an installation location.
-3. Open **`app\SteveInTheZone.exe`** inside the new **`Steve in the Zone`** folder and launch the game.
-
-Play in the S.T.A.L.K.E.R. window; Minecraft runs in the background. Setup preserves your original games and saves. The base games and Java are not included in the download.
-
-[Detailed installation and controls](README-EN.md)
-
-## Beta status
-
-A complete story playthrough has not been confirmed. Use Minecraft equipment for combat and protection: SoC guns and outfit protection are not fully ported. [Known limitations](KNOWN-LIMITATIONS.md).
-
-[Report a problem](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose) with the area and steps that caused it. [Useful logs](REPORT-A-PROBLEM.md).
-
-## Source code
-
-The [launcher folder](launcher) contains our installer and launch application: the interface, component downloads, starting both games and joint saves. [What setup does](SECURITY.md).
-
-The full source archive in Releases also contains the Minecraft mod, native engine changes and the bridge between the games. [Build instructions](BUILD-SOURCES.md) are for developers. Component licenses are preserved in [licenses](licenses).
+</div>
 
 ---
 
-Стройте, создавайте предметы и сражайтесь за Стива в мире **S.T.A.L.K.E.R.: Тень Чернобыля**. Персонажи, диалоги, задания и деньги остаются из «Сталкера»; инструменты, броня и блоки — из Minecraft.
+Play as Steve in **S.T.A.L.K.E.R.: Shadow of Chernobyl**. Meet the Zone's original characters, follow its quests, and bring Minecraft tools, armor, crafting and blocks with you.
 
-**[Скачать beta 0.4.0-beta.1](https://github.com/DeSoreGD/Steve-in-the-zone/releases)** · **[Установка и управление на русском](README-RU.md)**
+You play in the S.T.A.L.K.E.R. window. A separate Minecraft instance runs in the background and handles Steve and Minecraft mechanics. The launcher starts and closes both parts together.
 
-Для игры скачайте **`Steve-in-the-Zone-0.4.0-beta.1-Windows-x64.zip`**.
+## Before you start
 
-Понадобятся **Windows 10/11 x64**, установленная **«Тень Чернобыля» 1.0006 без сторонних модов**, **Minecraft Java Edition** и **64-битная Java**. Установщик скачает недостающие файлы **Minecraft 1.20.1** и Fabric с официальных серверов, а подходящие файлы из вашей папки Minecraft использует повторно. Bedrock Edition не подходит.
+These instructions describe **0.4.0-beta.2**. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
 
-Java запускает Minecraft-часть проекта. Если установщик не нашёл подходящую Java, установите [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), вариант **Windows x64 / msi**.
+| You need | Details |
+|---|---|
+| Windows | Windows 10 or 11, **64-bit** |
+| S.T.A.L.K.E.R. | Installed **Shadow of Chernobyl 1.0006**, without other mods |
+| Minecraft | **Java Edition** and its data folder; Bedrock Edition is unsupported |
+| Java | **64-bit Java 17+**; Java 21 is recommended for a new installation |
+| Internet & storage | Internet for setup downloads and room for separate game files |
 
-1. Распакуйте весь Windows-архив и запустите **`InstallSteveInTheZone.exe`**.
-2. Выберите папку «Тени Чернобыля», папку данных Minecraft Java Edition (обычно `%APPDATA%\.minecraft`), Java при необходимости и место установки.
-3. После установки откройте **`app\SteveInTheZone.exe`** в созданной папке **`Steve in the Zone`** и нажмите **«Запустить игру»**.
+Java runs the Minecraft part. If setup finds compatible Java, use it. Otherwise, install [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), choosing **Windows → x64 → msi**. The base games and Java are not included in the download.
 
-Играйте в окне «Сталкера»; Minecraft работает в фоне. Исходные игры и сохранения сохраняются. Оригинальные игры и Java в архив не входят.
+## Install and play
 
-Полное прохождение сюжета ещё не подтверждено. Для боя и защиты используйте Minecraft-снаряжение — оружие и костюмы «Сталкера» пока не перенесены полностью. [Ограничения beta](KNOWN-LIMITATIONS.md).
+1. Download the **Windows-x64.zip** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources.zip` is for developers.
+2. Extract the **entire archive** and open **`InstallSteveInTheZone.exe`**. Keep the EXE, `_internal` and `payload` together.
+3. Select your SoC folder, Minecraft data folder, Java if needed, and a new installation location. Leave **Create a desktop shortcut** checked if you want one.
+4. After setup finishes, use the shortcut or open **`app\SteveInTheZone.exe`** in the new **`Steve in the Zone`** folder. Choose **Survival** or **Creative** and launch.
 
-[Сообщить об ошибке](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose) · [Какие журналы приложить](REPORT-A-PROBLEM.md)
+Setup prepares its own **Minecraft 1.20.1 + Fabric** copy inside that installation. It copies matching files from your Minecraft folder and downloads missing components from official Minecraft/Mojang and Fabric servers. **You do not need to install 1.20.1 or Fabric in your regular Minecraft launcher.**
 
-Папка [launcher](launcher) содержит программу установки и запуска, а полный исходный архив в Releases — также мод Minecraft, изменения движка «Сталкера» и код связи между играми. [Что делает установщик](SECURITY.md).
+Your Minecraft data folder is usually `%APPDATA%\.minecraft`; other launchers may use a different folder. [Detailed installation guide](README-EN.md).
+
+## Essential controls
+
+| Key | Action |
+|---|---|
+| WASD / Space | Move / jump |
+| E | Minecraft inventory and access to Zone items |
+| G | Talk and interact |
+| F5 | Third-person view |
+| F6 | Switch Survival / Creative |
+| F7 / F8 | Save / load both parts together |
+| Esc | Menu and graphics settings |
+
+[All controls and F9 obstacle escape](README-EN.md#controls).
+
+## Your files and the source code
+
+Setup creates a **separate installation**. Your original games and saves stay in their original folders. Launcher accounts, login tokens and existing worlds are not imported. This beta uses a local player nickname; no account sign-in is required.
+
+Both game processes, their settings, logs and new saves belong to the new installation. The background Java/Minecraft process is part of the game.
+
+The [launcher folder](launcher) contains the installer and launch application. The release `sources.zip` also contains the Minecraft mod, native engine changes and bridge code.
+
+[File handling, download sources and executable signatures](SECURITY.md) · [Build from source](BUILD-SOURCES.md) · [Component licenses](https://github.com/DeSoreGD/Steve-in-the-zone/tree/main/licenses)
+
+## Beta scope
+
+A complete playthrough of the original campaign has **not yet been confirmed**. Progression bugs may occur. Use Minecraft equipment for combat and protection: SoC guns, outfit protection and artifact effects are not fully integrated. Microsoft sign-in and multiplayer are not implemented.
+
+[Known limitations](KNOWN-LIMITATIONS.md) · [Bug reports and useful logs](REPORT-A-PROBLEM.md)

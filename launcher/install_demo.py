@@ -9,6 +9,7 @@ import tkinter as tk
 from tkinter import filedialog,ttk
 from prepare_demo import prepare
 from ui_text import translator
+from desktop_shortcut import create_shortcut
 
 
 def main():
@@ -22,7 +23,7 @@ def main():
         except Exception as error:report={'success':False,'error':str(error)}
         if options.report:options.report.write_text(json.dumps(report),encoding='utf-8')
         return 0 if report['success'] else 1
-    window=tk.Tk();window.title('Steve in the Zone — Setup');window.geometry('780x530');window.resizable(False,False)
+    window=tk.Tk();window.title('Steve in the Zone — Setup');window.geometry('780x580');window.resizable(False,False)
     window.configure(bg='#20211d');window.iconbitmap(str(payload/'app/_internal/assets/zone-mark.ico'))
     locale=tk.StringVar(value='ru');fields={};captions=[];messages=queue.Queue();worker=None
     body=tk.Frame(window,bg='#20211d');body.pack(fill='both',expand=True,padx=24,pady=20)
@@ -39,7 +40,10 @@ def main():
     name=tk.Label(body,text='',bg='#20211d',fg='#b2b49f');name.grid(row=9,column=0,sticky='w',pady=12)
     tk.Entry(body,textvariable=fields['username'],width=18).grid(row=9,column=1,sticky='w')
     note=tk.Label(body,text='',bg='#20211d',fg='#b2b49f',justify='left',wraplength=730);note.grid(row=10,column=0,columnspan=4,sticky='w',pady=8)
-    status=tk.StringVar();tk.Label(body,textvariable=status,bg='#20211d',fg='#d7c28d',wraplength=730,justify='left').grid(row=12,column=0,columnspan=4,sticky='w',pady=12)
+    desktop_enabled=tk.BooleanVar(value=True)
+    desktop_check=tk.Checkbutton(body,variable=desktop_enabled,bg='#20211d',fg='#eee9d7',selectcolor='#2b2d26',activebackground='#20211d',activeforeground='#eee9d7')
+    desktop_check.grid(row=11,column=0,columnspan=4,sticky='w',pady=(0,8))
+    status=tk.StringVar();tk.Label(body,textvariable=status,bg='#20211d',fg='#d7c28d',wraplength=730,justify='left').grid(row=13,column=0,columnspan=4,sticky='w',pady=12)
     def start():
         nonlocal worker
         if worker and worker.is_alive():return
@@ -47,26 +51,32 @@ def main():
         if any(not value for key,value in values.items() if key!='java'):status.set('Choose the component folders first.');return
         values['destination']=str(Path(values['destination'])/'Steve in the Zone')
         language=locale.get()
+        add_desktop=desktop_enabled.get()
         def run():
             try:
                 result=prepare(payload=payload,language=language,notify=lambda text:messages.put(('status',text)),**values)
+                if add_desktop:
+                    try:create_shortcut(result.parent)
+                    except Exception:messages.put(('done_warning',str(result)));return
                 messages.put(('done',str(result)))
             except Exception as error:messages.put(('error',str(error)))
-        launch.configure(state='disabled');selector.configure(state='disabled')
+        launch.configure(state='disabled');selector.configure(state='disabled');desktop_check.configure(state='disabled')
         worker=threading.Thread(target=run,daemon=False);worker.start()
     launch=tk.Button(body,text='',command=start,bg='#d7c28d',fg='#20211d',relief='flat',font=('Segoe UI',12,'bold'),pady=10)
-    launch.grid(row=11,column=0,columnspan=4,sticky='ew',pady=(8,0))
+    launch.grid(row=12,column=0,columnspan=4,sticky='ew',pady=(8,0))
     def translate(_=None):
         t=translator(locale.get());title.configure(text=t('Установка'));launch.configure(text=t('Установить'));name.configure(text=t('Имя игрока'))
         for label,text in captions:label.configure(text=t(text))
+        desktop_check.configure(text=t('Создать ярлык на рабочем столе'))
         note.configure(text=t('Локальная одиночная игра. Аккаунты и сохранения не импортируются. Недостающие компоненты Minecraft загружаются с официальных серверов.'))
     selector.bind('<<ComboboxSelected>>',translate);translate()
     def update():
         while not messages.empty():
             kind,text=messages.get_nowait()
             if kind=='done':status.set(translator(locale.get())('Установка завершена. Открой app/SteveInTheZone.exe в папке игры.'))
+            elif kind=='done_warning':status.set(translator(locale.get())('Игра установлена, но ярлык создать не удалось. Откройте app/SteveInTheZone.exe в папке игры.'))
             else:status.set(translator(locale.get())(text))
-            if kind in ('done','error'):launch.configure(state='normal');selector.configure(state='readonly')
+            if kind in ('done','done_warning','error'):launch.configure(state='normal');selector.configure(state='readonly');desktop_check.configure(state='normal')
         window.after(100,update)
     def close():
         if worker and worker.is_alive():status.set(translator(locale.get())('Дождись завершения подготовки.'));return

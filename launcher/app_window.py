@@ -20,7 +20,7 @@ def window_once(config,supervise,validate):
     t=translator(config["settings"]["language"])
     # Separate identity/icon from the Python interpreter in Windows taskbar.
     ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("SteveInTheZone")
-    window=tk.Tk();window.title(t("Стив в Зоне"));window.geometry("760x470")
+    window=tk.Tk();window.title(t("Стив в Зоне"));window.geometry("760x570")
     window.configure(bg=BG);window.resizable(False,False)
     if ICON.is_file():window.iconbitmap(str(ICON))
     window.update_idletasks()

@@ -1,5 +1,7 @@
 """Shared installer/launcher UI text. Independent of either game's language."""
 EN={
+ "Создать ярлык на рабочем столе":"Create a desktop shortcut",
+ "Игра установлена, но ярлык создать не удалось. Откройте app/SteveInTheZone.exe в папке игры.":"Game installed, but the shortcut could not be created. Open app/SteveInTheZone.exe in the game folder.",
  "Minecraft × S.T.A.L.K.E.R.  /  Кампания":"Minecraft × S.T.A.L.K.E.R.  /  Campaign",
  "Игра закрыта. Мир сохранён.":"Game closed. World saved.",
  "Закрыть игру":"Close game",
