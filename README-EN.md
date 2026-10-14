@@ -2,7 +2,7 @@
 
 Build, craft and fight as Steve inside **S.T.A.L.K.E.R.: Shadow of Chernobyl**. NPCs, dialogue and quests come from SoC; tools, armor, crafting and blocks come from Minecraft.
 
-Version **0.4.0-beta.2**. A full story playthrough has not been confirmed. [Known limitations](KNOWN-LIMITATIONS.md).
+Version **0.4.0-beta.3** (prepared for release). A full story playthrough has not been confirmed. [Known limitations](KNOWN-LIMITATIONS.md).
 
 ## Requirements
 
@@ -24,7 +24,7 @@ If setup finds compatible Java, there is no need to download it again. Otherwise
 
 ## Installation
 
-1. Download **`Steve-in-the-Zone-0.4.0-beta.2-Windows-x64.zip`** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources` archive is for developers.
+1. Download **`Steve-in-the-Zone-0.4.0-beta.3-Windows-x64.zip`** from [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases). The `sources` archive is for developers.
 2. Extract the **entire archive** and run **`InstallSteveInTheZone.exe`**. Keep the EXE, `_internal` and `payload` together.
 3. Choose the setup language and fill in the fields using the table below.
 4. Click **Install** and wait for it to finish. Setup creates its own **Minecraft 1.20.1 + Fabric** installation inside the new **Steve in the Zone** folder. It copies matching files from your selected Minecraft folder and downloads the rest from official servers. Our launcher runs this separate copy in the background; you do not need to install 1.20.1 or Fabric through your regular Minecraft launcher.
@@ -38,6 +38,12 @@ If setup finds compatible Java, there is no need to download it again. Otherwise
 | New game folder | A folder where setup will create a separate **`Steve in the Zone`** directory, for example `D:\Games` |
 
 Play in the S.T.A.L.K.E.R. window. Minecraft runs in the background. The first launch starts a new campaign; later launches resume the latest joint save.
+
+## Update from an earlier beta
+
+Close the game and launcher. Extract the new Windows archive, run **InstallSteveInTheZone.exe**, enable **Update existing and keep progress**, and select the existing **Steve in the Zone** installation folder. Base-game folders and Java do not need to be selected again.
+
+Your worlds, joint saves, inventory, player identity, preferences and other Minecraft mods are retained. Setup backs up replaced project files in `update-backups`. If replacing a file fails, Setup restores the previous files. Automatic updating supports installations created by Setup; custom development layouts are refused.
 
 ## Controls
 
@@ -75,3 +81,11 @@ Beta.2 keeps native quest rewards and affordable food, arrows and building suppl
 ## Problems and security
 
 [Report an issue](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose) · [Useful logs](REPORT-A-PROBLEM.md) · [What setup does](SECURITY.md)
+
+## Minecraft shop and frame limit
+
+The Minecraft shop has sections for building, decoration, equipment, supplies, materials and workstations. Select a row to buy **1, 4 or 16 packs**; the quantity and total ruble price are shown before purchase. Decorative stock can also have ordinary Minecraft uses: wool participates in crafting, ladders let you climb, and chests and furnaces remain functional.
+
+Sidorovich sells TNT after the first bandit mission is completed. Later traders also stock it. TNT requires flint and steel to ignite; beds in the custom Zone dimensions are safe decorations and do not set a new respawn point.
+
+The launcher's FPS setting caps both games. Changing `r_fps_lock` in the native graphics settings is also passed to background Minecraft. **Unlimited** removes the gameplay cap; it does not guarantee a particular frame rate. Native paused menus retain their existing cap.

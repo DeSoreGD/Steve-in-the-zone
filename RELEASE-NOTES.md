@@ -1,59 +1,42 @@
-### Changes in beta.2
+# 0.4.0-beta.3
 
-- Renamed project source modules and the mod file to SITZ; existing save identifiers remain compatible.
+## Changes
 
-- Added an optional desktop shortcut during setup.
-- Updated inventory cursor input and Shift-click handling.
-- Fixed the overlap between the Minecraft and S.T.A.L.K.E.R. trade screens.
-- Removed the return to an old ground position when ending Creative flight.
-- Fixed loading a save made above the ground: Survival resumes on the actual surface below, and saved Creative flight is retained.
-- Disabled Steve's bleeding, reduced native bullet damage to 40%, and added a safe threshold for low accumulated radiation.
-- Adjusted wooden-box damage and removed combat targets left behind by broken props.
-- Added interpolation between received movement frames and aligned Steve's model with the camera. Disabled VSync in the background Minecraft copy to avoid waiting on its hidden window.
-- Removed the 16-TNT display cutoff. Nearby TNT is drawn in distance order, with complete models and space retained for explosion particles.
-- Rebalanced Minecraft equipment prices: iron armor is a gradual upgrade, material prices match crafting costs, and food, arrows and building supplies keep their previous prices. Shops use the original S.T.A.L.K.E.R. ruble wallet.
+- Native bullets blocked by a raised shield now deal 20% of their usual damage before armor. Shield wear, direction checks and the normal damage cooldown remain.
+- Native bullets no longer push Steve off course; melee and explosions still do. Held-button mining works in Survival with the ordinary tools, block hardness and drops.
+- One FPS limit for both games: 30, 60, 90, 120, 144, 240 or unlimited. Changes to the native graphics cap are passed to background Minecraft.
+- Setup can update an existing installation while keeping worlds, paired saves, items and preferences. Replaced project files are backed up locally.
+- Reworked the Minecraft shop with categories, item icons, use hints and purchases of 1, 4 or 16 packs. Added building and decorative supplies, working blocks, gunpowder and TNT. Sidorovich's TNT unlocks after the first bandit mission.
+- Reduced shop confirmation polling delays. Purchases still save a paired checkpoint so money and items stay together.
+- Beds in custom Zone dimensions are safe decorations; they do not explode or change your respawn point.
+- Added a README banner and noncommercial terms for project-owned code. Existing third-party licenses remain in force; see LICENSING.md.
 
-Startup and movement were checked in local play. Other changes have build and targeted code checks; feedback from ordinary play is welcome.
-Build, craft and fight as Steve in **S.T.A.L.K.E.R.: Shadow of Chernobyl**, with its original characters, dialogues and quests. Survival and Creative modes are available.
+The mining and bullet-knockback fixes were prepared after the published beta.2 archives and are included here.
 
-### Requirements
+## Install or update
 
-- Windows 10/11, 64-bit.
-- An installed copy of **Shadow of Chernobyl 1.0006**, without other mods.
-- **Minecraft Java Edition** and its local data folder, usually `%APPDATA%\.minecraft`. Bedrock Edition is not supported.
-- **64-bit Java** to run the Minecraft part. If setup cannot find compatible Java, install [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), choosing **Windows x64 / msi**.
+For a new installation, extract the full Windows archive and open **InstallSteveInTheZone.exe**. Setup creates a separate game folder, prepares Minecraft 1.20.1 + Fabric, and can create a desktop shortcut.
 
-Setup creates a separate **Minecraft 1.20.1 + Fabric** copy inside the new **Steve in the Zone** installation. It copies matching files from your Minecraft data folder and downloads missing files from official servers. The project's launcher starts this copy in the background; you do not need to install version 1.20.1 or Fabric through your regular Minecraft launcher. The base games and Java are not included in the ZIP.
+For an existing Setup installation, close the game and launcher, enable **Update existing and keep progress**, and select its **Steve in the Zone** folder. Backups of replaced files are stored in `update-backups`. Custom development layouts are not supported by automatic updating.
 
-### Install and play
+You need Windows x64, an installed unmodified **Shadow of Chernobyl 1.0006**, **Minecraft Java Edition** and compatible **64-bit Java 17+**. The base games and Java are not bundled. [Installation](README-EN.md) · [Build from source](BUILD-SOURCES.md).
 
-1. Download **`Steve-in-the-Zone-0.4.0-beta.2-Windows-x64.zip`** below.
-2. Extract the entire archive, then open **`InstallSteveInTheZone.exe`**.
-3. Select your Shadow of Chernobyl folder, Minecraft data folder, Java if requested, and a destination for the new installation.
-4. Use the desktop shortcut created by setup, or open **`app\SteveInTheZone.exe`** inside the created **`Steve in the Zone`** folder, then click the button to start the game.
+## Beta status
 
-Play in the S.T.A.L.K.E.R. window; Minecraft runs in the background. Setup creates a separate installation and keeps your original games and saves. Use **F7** to save both parts and **F8** to load.
-
-### Beta limitations
-
-A full story playthrough has not yet been confirmed. Native S.T.A.L.K.E.R. gunfire, outfit protection and artifact effects are not fully integrated; use Minecraft equipment for combat and protection.
-
-[Installation guide](https://github.com/DeSoreGD/Steve-in-the-zone/blob/main/README-EN.md) · [Known limitations](https://github.com/DeSoreGD/Steve-in-the-zone/blob/main/KNOWN-LIMITATIONS.md) · [Report a bug](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose)
-
-The **`sources.zip`** is for inspecting or building the project; it is not needed to play. [Build from source](https://github.com/DeSoreGD/Steve-in-the-zone/blob/main/BUILD-SOURCES.md). `SHA256SUMS.txt`, if attached, lets you check that a download is intact.
+Builds and focused checks cover the changed mechanics, update preservation and recovery. A complete Survival story playthrough and a clean source build on a fresh PC remain unverified. Native guns, outfit protection, all passive artifact effects and convenient treatment through a unified inventory remain incomplete. [Known limitations](KNOWN-LIMITATIONS.md).
 
 ---
 
-### По-русски
+## По-русски
 
-Первая публичная beta: стройте, создавайте предметы и сражайтесь за Стива в **«Тени Чернобыля»**, с её персонажами, диалогами и заданиями. Доступны «Выживание» и «Творческий».
+- Щит пропускает 20% обычного урона пули, затем применяется броня. Износ, направление блока и задержка между получениями урона сохранены.
+- Исправлены добыча блоков удержанием кнопки в Выживании и откидывание от пуль. Ближние удары и взрывы по-прежнему отбрасывают Стива.
+- Добавлен общий лимит FPS обеих игр и обновление через Setup с сохранением прогресса и настроек.
+- Магазин получил разделы, иконки, подсказки и покупку 1, 4 или 16 наборов. Добавлены строительные и декоративные товары, рабочие блоки, порох и TNT. У Сидоровича TNT открывается после первого задания с бандитами.
+- Сокращено ожидание подтверждений покупки. Совместные сохранения при сделках сохраняются.
+- Кровати в собственных измерениях Зоны больше не взрываются: это декор без сна и изменения точки возрождения.
+- В README добавлена обложка. Для нашего кода введены некоммерческие условия; лицензии сторонних частей сохранены.
 
-Нужны **Windows 10/11 x64**, установленная **«Тень Чернобыля» 1.0006 без сторонних модов**, **Minecraft Java Edition** и **64-битная Java**. Установщик создаёт отдельную копию **Minecraft 1.20.1 с Fabric** внутри новой установки **Steve in the Zone**: копирует подходящие файлы из вашей папки Minecraft, а недостающие скачивает с официальных серверов. Эту копию запускает наш лаунчер; вручную устанавливать 1.20.1 или Fabric в обычном лаунчере Minecraft не требуется. Bedrock Edition не подходит. Если Java не найдена, установите Microsoft OpenJDK 21 по ссылке выше: **Windows x64 / msi**.
+Для обновления закройте игру и лаунчер, распакуйте новый Windows-архив, запустите Setup, включите **«Обновить установленную игру, сохранив прогресс»** и выберите существующую установку. Для новой установки следуйте [инструкции](README-RU.md).
 
-Скачайте **Windows-x64.zip**, распакуйте весь архив и запустите **`InstallSteveInTheZone.exe`**. Укажите папки обеих игр и место установки. Затем откройте **`app\SteveInTheZone.exe`** в созданной папке **`Steve in the Zone`** и нажмите **«Запустить игру»**. Играйте в окне «Сталкера»; Minecraft работает в фоне. **F7** сохраняет обе части, **F8** загружает сохранение.
-
-Полное прохождение сюжета пока не подтверждено. Оружие, защита костюмов и эффекты артефактов «Сталкера» интегрированы не полностью; для боя используйте Minecraft-снаряжение. Исходные игры и сохранения сохраняются. Сами игры и Java в архив не входят.
-
-[Инструкция на русском](https://github.com/DeSoreGD/Steve-in-the-zone/blob/main/README-RU.md) · [Сообщить об ошибке](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose)
-
-
+Полное прохождение сюжета пока не подтверждено. Подробности — в [ограничениях beta](KNOWN-LIMITATIONS.md).

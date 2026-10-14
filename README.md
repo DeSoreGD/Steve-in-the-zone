@@ -20,7 +20,7 @@ You play in the S.T.A.L.K.E.R. window. A separate Minecraft instance runs in the
 
 ## Before you start
 
-These instructions describe **0.4.0-beta.2**. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
+These instructions describe **0.4.0-beta.3**, currently prepared for release. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
 
 | You need | Details |
 |---|---|
@@ -42,6 +42,10 @@ Java runs the Minecraft part. If setup finds compatible Java, use it. Otherwise,
 Setup prepares its own **Minecraft 1.20.1 + Fabric** copy inside that installation. It copies matching files from your Minecraft folder and downloads missing components from official Minecraft/Mojang and Fabric servers. **You do not need to install 1.20.1 or Fabric in your regular Minecraft launcher.**
 
 Your Minecraft data folder is usually `%APPDATA%\.minecraft`; other launchers may use a different folder. [Detailed installation guide](README-EN.md).
+
+## Updating an existing installation
+
+Close the game and its launcher. Open the new Setup, select **Update existing and keep progress**, and choose the existing **Steve in the Zone** folder. Setup replaces the project files and keeps your worlds, joint saves, inventory, player identity and settings. Replaced files are backed up in `update-backups` inside that installation. Custom development layouts are not supported by this update mode.
 
 ## Essential controls
 

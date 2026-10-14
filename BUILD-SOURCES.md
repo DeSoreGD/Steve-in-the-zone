@@ -1,4 +1,4 @@
-# Build from source — 0.4.0-beta.2
+# Build from source — 0.4.0-beta.3
 
 This guide is for people who want to inspect the implementation or build their own Windows installer. It describes the project's current build workflow.
 
@@ -19,6 +19,8 @@ Registry, dimension and saved-data identifiers from earlier builds are retained 
 | `tools` | Engine patching, build and packaging scripts |
 | `native-overlay` | Project game scripts, configuration and overlay assets |
 | `notices` | Third-party notices |
+
+Project-authored standalone code uses [PolyForm Noncommercial 1.0.0](LICENSE); [LICENSING.md](LICENSING.md) explains the scope and the separate terms for the engine and dependencies. You may make and share noncommercial modifications; selling them requires permission.
 
 The original games, Java, accounts, saves and build caches are not included. The OGSR engine and third-party SDKs are separate dependencies. Their licenses still apply; this is not an entirely dependency-free or entirely open-source game.
 
@@ -124,10 +126,10 @@ Output: **`runtime/portable-dist/installer/InstallSteveInTheZone/InstallSteveInT
 ## 5. Package and use your build
 
 ```powershell
-& runtime/packaging-venv/Scripts/python.exe tools/package_campaign_candidate.py --beta --version 0.4.0-beta.2
+& runtime/packaging-venv/Scripts/python.exe tools/package_campaign_candidate.py --beta --version 0.4.0-beta.3
 ```
 
-The Windows and source ZIPs appear in **`runtime/releases/0.4.0-beta.2`**. This command does not publish them.
+The Windows and source ZIPs appear in **`runtime/releases/0.4.0-beta.3`**. This command does not publish them.
 
 Run your locally built installer and select your own SoC, Minecraft and Java files as described in [the installation guide](README-EN.md). Choose a separate destination to keep existing installations and saves intact.
 
@@ -161,3 +163,13 @@ A successful build is not a security audit or proof that the entire campaign wor
 
 Самостоятельная сборка позволяет прочитать и скомпилировать наш код, но не заменяет проверку кода и сторонних зависимостей. Полная сборка этого архива на чистом ПК и побайтовое совпадение с релизом пока не подтверждены.
 
+
+### Installer update checks (Windows)
+
+After installing the launcher build requirements, these checks use disposable folders inside `runtime`. They check file preservation, Windows session locking and recovery; they do not touch an installed game or launch either base game.
+
+```powershell
+New-Item -ItemType Directory -Force runtime | Out-Null
+python tools/test_update_installation.py
+python tools/test_setup_layout.py
+```

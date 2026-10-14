@@ -104,17 +104,17 @@ def window_once(config,supervise,validate):
         label(row,title,size=9,color=MUTED).pack(side="left")
     label(help,"Отдельный мир.\nПрогресс сохраняется.",size=9,color=MUTED,justify="left").pack(anchor="w",pady=(18,0))
     label(prefs,"Настройки",size=17,bold=True).grid(row=0,column=0,columnspan=2,sticky="w",pady=(0,10))
-    memory=tk.StringVar(value=str(config["settings"]["memoryMb"]//1024));fps=tk.StringVar(value=str(config["settings"]["maxFps"]))
+    memory=tk.StringVar(value=str(config["settings"]["memoryMb"]//1024));fps=tk.StringVar(value=str(config["settings"]["maxFps"]) if config["settings"]["maxFps"] else t("Без ограничения"))
     volume=tk.DoubleVar(value=config["settings"]["soundVolume"]*100)
-    for row,title,variable,values in [(1,"Память Minecraft, ГБ",memory,("2","4","6")),(2,"Частота Minecraft",fps,("30","60","90"))]:
+    for row,title,variable,values in [(1,"Память Minecraft, ГБ",memory,("2","4","6")),(2,"Лимит FPS обеих игр",fps,("30","60","90","120","144","240",t("Без ограничения")))]:
         label(prefs,title,size=10).grid(row=row,column=0,sticky="w",pady=6)
-        ttk.Combobox(prefs,textvariable=variable,values=values,state="readonly",width=8,style="Zone.TCombobox").grid(row=row,column=1,sticky="e")
+        ttk.Combobox(prefs,textvariable=variable,values=values,state="readonly",width=16,style="Zone.TCombobox").grid(row=row,column=1,sticky="e")
     label(prefs,"Звуки Minecraft",size=10).grid(row=3,column=0,sticky="w",pady=6)
     ttk.Scale(prefs,variable=volume,from_=0,to=100,style="Zone.Horizontal.TScale").grid(row=3,column=1,sticky="ew")
     prefs.columnconfigure(1,weight=1)
     label(prefs,"Графика «Сталкера»: Esc → Настройки.",size=9,color=MUTED).grid(row=4,column=0,columnspan=2,sticky="w",pady=10)
     def save():
-        persist({**config["settings"],"memoryMb":int(memory.get())*1024,"maxFps":int(fps.get()),"soundVolume":round(volume.get()/100,2)})
+        persist({**config["settings"],"memoryMb":int(memory.get())*1024,"maxFps":int(fps.get()) if fps.get().isdigit() else 0,"soundVolume":round(volume.get()/100,2)})
         prefs.pack_forget();main.pack(fill="x");status.set(t("Настройки сохранены. Применятся при запуске."))
     button(prefs,"Готово",save,True).grid(row=5,column=0,columnspan=2,sticky="ew")
     def reset():

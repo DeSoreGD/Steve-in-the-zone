@@ -23,7 +23,7 @@ DEFAULT_SETTINGS = {"memoryMb": 2048, "maxFps": 60, "soundVolume": 0.7, "gameMod
 
 def validate_settings(values: dict) -> dict:
     result = {**DEFAULT_SETTINGS, **values}
-    if result["memoryMb"] not in (2048, 4096, 6144) or result["maxFps"] not in (30, 60, 90):
+    if result["memoryMb"] not in (2048, 4096, 6144) or result["maxFps"] not in (0, 30, 60, 90, 120, 144, 240):
         raise ValueError("Некорректные настройки памяти или частоты обновления.")
     volume = result["soundVolume"]
     if not isinstance(volume, (int, float)) or not 0 <= volume <= 1:
@@ -215,6 +215,7 @@ def _supervise_once(config,cancel,notify,attach_test_host=0,_session_lock=None,r
                 start=native_arguments.index('-start')+1
                 native_arguments[start]=f'server({resume}/single/alife/load)'
             native_environment=dict(os.environ,STALKERCRAFT_CAMPAIGN_DIR=str(campaign))
+            native_environment['SITZ_MAX_FPS']=str(config['settings']['maxFps'])
             # Foreground owners keep their settings. Only explicitly isolated
             # probes use the native hidden/no-input mode, including their splash.
             if config.get('testProfile') is True:

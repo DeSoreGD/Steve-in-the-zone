@@ -8,7 +8,7 @@ You may inspect the code, build it yourself, make your own versions, use it in o
 
 These terms apply to project-authored launcher code, Minecraft integration, protocol helpers, tools and original integration scripts, to the extent owned by the project maintainer. They apply to copies distributed with these terms.
 
-The native OGSR engine and modifications derived from it retain the GSC Game World terms in `licenses/OGSR-Engine-LICENSE.md` (or `payload/notices/OGSR-Engine-LICENSE.md` in the installer). Third-party libraries retain their own licenses and notices. Minecraft, S.T.A.L.K.E.R. game files, artwork and third-party trademarks are not licensed by this document. The project cannot grant rights belonging to their owners.
+The native OGSR engine and modifications derived from it retain the GSC Game World terms in `licenses/OGSR-Engine-LICENSE.md` (or `notices/OGSR-Engine-LICENSE.md` in the source archive and installed game, and `payload/notices/OGSR-Engine-LICENSE.md` in the installer). Third-party libraries retain their own licenses and notices. Minecraft, S.T.A.L.K.E.R. game files, artwork and third-party trademarks are not licensed by this document. The project cannot grant rights belonging to their owners.
 
 ## Additional permission for gameplay videos
 

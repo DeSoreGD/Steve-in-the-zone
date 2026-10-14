@@ -1,5 +1,15 @@
 """Shared installer/launcher UI text. Independent of either game's language."""
 EN={
+ "Выберите папку игры и необходимые компоненты.":"Select the game folder and required components.",
+ "Лимит FPS обеих игр":"Frame rate limit for both games",
+ "Без ограничения":"Unlimited",
+ "Обновить установленную игру, сохранив прогресс":"Update an existing installation and keep progress",
+ "Папка установленной игры":"Existing game folder",
+ "Обновить":"Update",
+ "Выберите папку Steve in the Zone. Закройте игру и лаунчер. Сохранения, предметы и настройки сохранятся.":"Select the Steve in the Zone folder. Close the game and launcher. Saves, items and preferences will be kept.",
+ "Обновляю файлы игры. Сохранения и настройки сохраняются…":"Updating game files. Keeping saves and preferences…",
+ "Восстанавливаю предыдущую версию после прерванного обновления…":"Restoring the previous version after an interrupted update…",
+ "Обновление завершено. Прогресс и настройки сохранены.":"Update complete. Progress and preferences were kept.",
  "Создать ярлык на рабочем столе":"Create a desktop shortcut",
  "Игра установлена, но ярлык создать не удалось. Откройте app/SteveInTheZone.exe в папке игры.":"Game installed, but the shortcut could not be created. Open app/SteveInTheZone.exe in the game folder.",
  "Minecraft × S.T.A.L.K.E.R.  /  Кампания":"Minecraft × S.T.A.L.K.E.R.  /  Campaign",

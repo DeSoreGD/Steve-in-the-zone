@@ -191,6 +191,7 @@ def prepare(destination,game_source,minecraft_source,java,payload,username='Stev
         (stage/'demo-launch.json').write_text(json.dumps(config,indent=2),encoding='utf-8')
         # A private candidate application is copied; installed game data stays external to its bundle.
         shutil.copytree(payload/'app',stage/'app')
+        if (payload/'notices').is_dir():shutil.copytree(payload/'notices',stage/'notices')
         (stage/'installation.json').write_text(json.dumps({'schema':1,'provider':'local-singleplayer','minecraft':MC_VERSION,'fabric':FABRIC_VERSION,'payload':manifest['files']},indent=2),encoding='utf-8')
         stage.rename(destination)
         notify('Установка завершена.')
