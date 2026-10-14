@@ -2,6 +2,8 @@
 
 ## Changes
 
+- Placed heads, animals, the Wither and its flying skulls now use the native model renderer, preserving Zone lighting instead of switching the whole scene to the slower image-transfer path.
+
 - Native bullets blocked by a raised shield now deal 20% of their usual damage before armor. Shield wear, direction checks and the normal damage cooldown remain.
 - Native bullets no longer push Steve off course; melee and explosions still do. Held-button mining works in Survival with the ordinary tools, block hardness and drops.
 - One FPS limit for both games: 30, 60, 90, 120, 144, 240 or unlimited. Changes to the native graphics cap are passed to background Minecraft.
@@ -28,6 +30,8 @@ Builds and focused checks cover the changed mechanics, update preservation and r
 ---
 
 ## По-русски
+
+- Установленные головы, животные, визер и его снаряды теперь отрисовываются через native-модели: появление этих объектов сохраняет освещение Зоны вместо переключения всей сцены на более медленную передачу изображения.
 
 - Щит пропускает 20% обычного урона пули, затем применяется броня. Износ, направление блока и задержка между получениями урона сохранены.
 - Исправлены добыча блоков удержанием кнопки в Выживании и откидывание от пуль. Ближние удары и взрывы по-прежнему отбрасывают Стива.
