@@ -2,6 +2,9 @@
 
 ## Changes
 
+- Added native drawing for experience orbs, minecarts, boats, falling blocks and decorative entities; item drops and translucent blocks/models keep the native scene.
+- Hostile Minecraft mobs can select native human NPCs. Native prop hitboxes are excluded from AI targets; mob hits are separated from Steve for native relationship and kill-credit handling.
+
 - Placed heads, animals, the Wither and its flying skulls now use the native model renderer, preserving Zone lighting instead of switching the whole scene to the slower image-transfer path.
 
 - Native bullets blocked by a raised shield now deal 20% of their usual damage before armor. Shield wear, direction checks and the normal damage cooldown remain.
@@ -30,6 +33,8 @@ Builds and focused checks cover the changed mechanics, update preservation and r
 ---
 
 ## По-русски
+
+Опыт, вагонетки, лодки, падающие блоки и декорации получили native-отрисовку; дроп и полупрозрачные модели сохраняют обычную сцену. Агрессивные Minecraft-мобы могут выбирать NPC, а хитбоксы коробок исключены из целей ИИ. Их удары передаются отдельно от Стива.
 
 - Установленные головы, животные, визер и его снаряды теперь отрисовываются через native-модели: появление этих объектов сохраняет освещение Зоны вместо переключения всей сцены на более медленную передачу изображения.
 
