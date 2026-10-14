@@ -1,3 +1,5 @@
+![Steve in the Zone](assets/steve-in-the-zone.png)
+
 <div align="center">
 
 # Steve in the Zone
@@ -63,10 +65,11 @@ Both game processes, their settings, logs and new saves belong to the new instal
 
 The [launcher folder](launcher) contains the installer and launch application. The release `sources.zip` also contains the Minecraft mod, native engine changes and bridge code.
 
-[File handling, download sources and executable signatures](SECURITY.md) · [Build from source](BUILD-SOURCES.md) · [Component licenses](https://github.com/DeSoreGD/Steve-in-the-zone/tree/main/licenses)
+[Code license and permitted uses](LICENSING.md) · [File handling, download sources and executable signatures](SECURITY.md) · [Build from source](BUILD-SOURCES.md) · [Component licenses](https://github.com/DeSoreGD/Steve-in-the-zone/tree/main/licenses)
 
 ## Beta scope
 
 A complete playthrough of the original campaign has **not yet been confirmed**. Progression bugs may occur. Use Minecraft equipment for combat and protection: SoC guns, outfit protection and artifact effects are not fully integrated. Microsoft sign-in and multiplayer are not implemented.
 
 [Known limitations](KNOWN-LIMITATIONS.md) · [Bug reports and useful logs](REPORT-A-PROBLEM.md)
+
