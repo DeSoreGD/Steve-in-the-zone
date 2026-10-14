@@ -1,0 +1,4 @@
+Unmodified Microsoft Visual C++ x64 OpenMP runtime (vcomp140.dll).
+Copyright Microsoft Corporation. Redistributable component from Visual Studio VC/Redist/MSVC.
+https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
