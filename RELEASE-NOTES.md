@@ -1,5 +1,7 @@
 ### Changes in beta.2
 
+- Renamed project source modules and the mod file to SITZ; existing save identifiers remain compatible.
+
 - Added an optional desktop shortcut during setup.
 - Updated inventory cursor input and Shift-click handling.
 - Fixed the overlap between the Minecraft and S.T.A.L.K.E.R. trade screens.

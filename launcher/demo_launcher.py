@@ -57,7 +57,7 @@ def load_config(path: Path) -> dict:
         raise ValueError("Отдельный профиль отсутствует.")
     if not (profile / "saves/Stalker mirror/level.dat").is_file() and not config.get("createWorldIfMissing"):
         raise ValueError("В отдельном профиле отсутствует демо-мир.")
-    if not (profile / "mods/stalkercraft.jar").is_file():
+    if not (profile / "mods/sitz.jar").is_file():
         raise ValueError("В профиле отсутствует мод.")
     native = config["native"]
     native["executable"] = str(Path(relative(native["executable"])).resolve(strict=True))

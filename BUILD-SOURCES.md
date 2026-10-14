@@ -6,6 +6,10 @@ This guide is for people who want to inspect the implementation or build their o
 
 ## What is included
 
+Project-owned source files use the short name **SITZ** and the Java package `dev.sitz`. The mod artifact is `sitz.jar`.
+
+Registry, dimension and saved-data identifiers from earlier builds are retained for compatibility with existing worlds. Renaming the project does not reset them or migrate your saves.
+
 | Directory | Contents |
 |---|---|
 | `fabric/src`, `src/fabric` | Minecraft mod and its tests |
@@ -37,7 +41,7 @@ $env:GRADLE_USER_HOME = Join-Path (Get-Location).Path 'runtime/gradle-home'
 gradle -p fabric build verifyDynamicMeshBudget
 ```
 
-Output: **`fabric/build/libs/stalkercraft-0.4.0-dev.jar`**.
+Output: **`fabric/build/libs/sitz-0.4.0-dev.jar`**.
 
 The project pins Minecraft **1.20.1**, Fabric Loader **0.19.5**, Fabric API **0.92.2+1.20.1** and Fabric Loom **1.6.12** in its build files. Do not change these versions just to use the newest dependency.
 

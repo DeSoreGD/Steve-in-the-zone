@@ -169,7 +169,7 @@ def prepare(destination,game_source,minecraft_source,java,payload,username='Stev
             obtain(cache/relative,'https://resources.download.minecraft.net/'+value[:2]+'/'+value,value,minecraft_source/relative)
         with ThreadPoolExecutor(max_workers=8) as downloads:
             for _ in downloads.map(asset,{entry['hash'] for entry in objects.values()}):pass
-        shutil.copyfile(payload/'stalkercraft.jar',profile/'mods/stalkercraft.jar')
+        shutil.copyfile(payload/'sitz.jar',profile/'mods/sitz.jar')
         shutil.copyfile(payload/'fabric-api.jar',profile/'mods/fabric-api.jar')
         (stage/'bridge').mkdir()
         game_language='en_us'
