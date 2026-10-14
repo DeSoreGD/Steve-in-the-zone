@@ -6,7 +6,7 @@
 
 Понадобятся **Windows 10/11 x64**, установленная **«Тень Чернобыля» 1.0006 без сторонних модов**, **Minecraft Java Edition** и **64-битная Java**.
 
-Проект работает на **Minecraft 1.20.1**. Установщик сам подготовит эту версию и Fabric; Bedrock Edition не подходит. Java запускает Minecraft-часть проекта. Если подходящая Java не найдена, установите [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), вариант **Windows x64 / msi**, и выберите его `bin\javaw.exe`.
+Проект работает на **Minecraft 1.20.1**. Установщик скачает недостающие файлы этой версии и Fabric с официальных серверов; подходящие файлы из выбранной папки Minecraft использует повторно. Bedrock Edition не подходит. Java запускает Minecraft-часть проекта. Если подходящая Java не найдена, установите [Microsoft OpenJDK 21](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21), вариант **Windows x64 / msi**, и выберите его `bin\javaw.exe`.
 
 ## Установка
 
@@ -27,6 +27,6 @@
 
 ## English
 
-First beta: build, craft and fight as Steve in Shadow of Chernobyl. Requirements: Windows 10/11 x64, **SoC 1.0006**, installed **Minecraft Java Edition**, and **64-bit Java**. Setup prepares Minecraft **1.20.1** and Fabric automatically. If compatible Java is not found, install Microsoft OpenJDK 21 for Windows x64.
+First beta: build, craft and fight as Steve in Shadow of Chernobyl. Requirements: Windows 10/11 x64, **SoC 1.0006**, installed **Minecraft Java Edition**, and **64-bit Java**. Setup downloads missing Minecraft **1.20.1**/Fabric files from official servers and reuses matching local files. If compatible Java is not found, install Microsoft OpenJDK 21 for Windows x64.
 
 Download the **Windows-x64 ZIP**, extract it fully and run `InstallSteveInTheZone.exe`. After setup, open `app\SteveInTheZone.exe` in the new `Steve in the Zone` folder. The base games and Java are not included. A full story playthrough remains unverified; follow the linked instructions and limitations above.
