@@ -38,8 +38,6 @@ The full source archive in Releases also contains the Minecraft mod, native engi
 
 ---
 
-## Русский
-
 Стройте, создавайте предметы и сражайтесь за Стива в мире **S.T.A.L.K.E.R.: Тень Чернобыля**. Персонажи, диалоги, задания и деньги остаются из «Сталкера»; инструменты, броня и блоки — из Minecraft.
 
 **[Скачать beta 0.4.0-beta.1](https://github.com/DeSoreGD/Steve-in-the-zone/releases)** · **[Установка и управление на русском](README-RU.md)**
