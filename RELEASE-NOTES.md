@@ -9,6 +9,7 @@
 - Adjusted wooden-box damage and removed combat targets left behind by broken props.
 - Added interpolation between received movement frames and aligned Steve's model with the camera. Disabled VSync in the background Minecraft copy to avoid waiting on its hidden window.
 - Removed the 16-TNT display cutoff. Nearby TNT is drawn in distance order, with complete models and space retained for explosion particles.
+- Rebalanced Minecraft equipment prices: iron armor is a gradual upgrade, material prices match crafting costs, and food, arrows and building supplies keep their previous prices. Shops use the original S.T.A.L.K.E.R. ruble wallet.
 
 Startup and movement were checked in local play. Other changes have build and targeted code checks; feedback from ordinary play is welcome.
 Build, craft and fight as Steve in **S.T.A.L.K.E.R.: Shadow of Chernobyl**, with its original characters, dialogues and quests. Survival and Creative modes are available.

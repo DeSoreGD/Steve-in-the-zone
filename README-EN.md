@@ -66,6 +66,12 @@ Buy Minecraft equipment and materials with rubles from Sidorovich and other orig
 
 Save with **F7** before travelling to another area. If you are stuck, check the PDA task first; F9 does not complete story conditions.
 
+## Money and equipment
+
+Minecraft shops use the **same rubles** as S.T.A.L.K.E.R.; buying items reduces your existing Zone wallet. Minecraft experience is used for enchanting, not as a second money balance.
+
+Beta.2 keeps native quest rewards and affordable food, arrows and building supplies. Leather is starter equipment; iron is a gradual upgrade, and diamonds remain a later optional purchase. Crafting iron armor costs less than buying the ready set. Older saves keep their money and items; revised prices apply to new purchases.
+
 ## Problems and security
 
 [Report an issue](https://github.com/DeSoreGD/Steve-in-the-zone/issues/new/choose) · [Useful logs](REPORT-A-PROBLEM.md) · [What setup does](SECURITY.md)

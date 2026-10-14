@@ -129,6 +129,16 @@ Run your locally built installer and select your own SoC, Minecraft and Java fil
 
 ## What this establishes
 
+The archive also includes focused Lua catalogue and transaction checks. After building the native engine and preparing `runtime/soc`, you can run them from a Visual Studio **x64 developer** terminal:
+
+```powershell
+cl /nologo /std:c++17 /EHsc /MD tools/run_lua_checks.cpp ogsr/upstream/ogsr_engine/_LIB/Engine/Release/x64/LuaJIT.lib /Fe:runtime/run_lua_checks.exe /Fo:runtime/run_lua_checks.obj
+& runtime/run_lua_checks.exe tools/fixtures/economy_balance_check.lua
+& runtime/run_lua_checks.exe tools/fixtures/campaign_trade_check.lua
+```
+
+These checks execute the catalogue and trade scripts with simulated native/IO dependencies. They do not launch games, alter real money or establish a complete campaign playthrough.
+
 Building yourself lets you inspect and compile the project-owned code instead of using the supplied project executables. You still use external compilers, Python packages, game files and third-party runtimes.
 
 A **clean-room build of this source archive and a byte-for-byte reproducible release have not yet been verified**. Compiler versions, dependency versions and build metadata can change the output hashes. `SOURCE-STATE.json` records reference release hashes, not a guarantee that another build will match them.
