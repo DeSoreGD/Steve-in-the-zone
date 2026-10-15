@@ -1,4 +1,4 @@
-# Build from source — 0.4.0-beta.3
+# Build from source — 0.4.0-beta.5
 
 This guide is for people who want to inspect the implementation or build their own Windows installer. It describes the project's current build workflow.
 
@@ -126,10 +126,10 @@ Output: **`runtime/portable-dist/installer/InstallSteveInTheZone/InstallSteveInT
 ## 5. Package and use your build
 
 ```powershell
-& runtime/packaging-venv/Scripts/python.exe tools/package_campaign_candidate.py --beta --version 0.4.0-beta.3
+& runtime/packaging-venv/Scripts/python.exe tools/package_campaign_candidate.py --beta --version 0.4.0-beta.5
 ```
 
-The Windows and source ZIPs appear in **`runtime/releases/0.4.0-beta.3`**. This command does not publish them.
+The Windows and source ZIPs appear in **`runtime/releases/0.4.0-beta.5`**. This command does not publish them.
 
 Run your locally built installer and select your own SoC, Minecraft and Java files as described in [the installation guide](README-EN.md). Choose a separate destination to keep existing installations and saves intact.
 

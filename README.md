@@ -20,7 +20,7 @@ You play in the S.T.A.L.K.E.R. window. A separate Minecraft instance runs in the
 
 ## Before you start
 
-These instructions describe **0.4.0-beta.3**, currently prepared for release. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
+These instructions describe **0.4.0-beta.5**. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
 
 | You need | Details |
 |---|---|
@@ -58,6 +58,8 @@ Close the game and its launcher. Open the new Setup, select **Update existing an
 | F6 | Switch Survival / Creative |
 | F7 / F8 | Save / load both parts together |
 | Esc | Menu and graphics settings |
+
+The in-game field guide opens once after loading and remains available through **E → Field guide**.
 
 [All controls and F9 obstacle escape](README-EN.md#controls).
 
