@@ -18,10 +18,6 @@ Play as Steve in **S.T.A.L.K.E.R.: Shadow of Chernobyl**. Meet the Zone's origin
 
 You play in the S.T.A.L.K.E.R. window. A separate Minecraft instance runs in the background and handles Steve and Minecraft mechanics. The launcher starts and closes both parts together.
 
-## New in beta.6
-
-The Wish Granter can now be mined with a netherite pickaxe, collected as one item and eaten for an optional ending. Sakharov sells the pickaxe after X16. This update also fixes eating while weapons are restricted and removes the destroyed Monolith's remaining glow and psi ambience.
-
 ## Before you start
 
 These instructions describe **0.4.0-beta.6**. Published builds are listed in [Releases](https://github.com/DeSoreGD/Steve-in-the-zone/releases).
